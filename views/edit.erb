@@ -1,0 +1,19 @@
+<div class="content">
+  <div class="container">
+    <div class="page-content">
+    <h2>Edit</h2>
+      <form action='/links/<%= @item['id']%>' method='post'>
+        <label class="go-left">URL</label><br>
+        <input type='text' name="url" placeholder="url" value='<%= @item['url'] %>'><br>
+        <label class="go-left">Genre</label><br>
+        <input type='text' name='genre' placeholder="genre" value='<%= @item['genre'] %>'><br>
+        <label class="go-left">Title</label><br>  
+        <input type='text' name="title" placeholder="title" value='<%= @item['title'] %>'><br>
+        <label class="go-left">Details</label><br>
+        <input type='text' name='details' placeholder="details" value='<%= @item['details'] %>'><br>
+        <button>Edit me</button>
+      </form>
+    </div>
+  </div>
+</div>
+

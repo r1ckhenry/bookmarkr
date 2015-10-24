@@ -1,0 +1,71 @@
+<!-- <div class="nugget-wrapper">
+  <div class="nugget"></div>
+</div> -->
+
+<div class="video-wrapper">
+  <div class="video-overlay">
+    <div class="video-callout">
+      <h1 class="white-text">BOOKMARKING. EVOLVED.</h1>
+      <h2 class="grey-text">Upload and store links from around the web</h2>
+
+      <div class="get-started">
+        <a href="/links/new" class="btn-prim">
+          <i class="fa fa-cloud-upload"></i>
+          Get started
+        </a>
+      </div>
+
+
+      <div class="link-slider">
+        <div><span class='arrow-down'></span> Search by genre</div>
+        <form action="/links" method="GET">
+          <input name="search" class="search" autofocus></input>
+          <button>Search</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <video autoplay loop poster="link.mov" class="video">
+    <source src="link.mov" type="video/mov">
+    <source src="link.mp4" type="video/mp4">
+  </video>
+  <div class="big-triangle"></div>
+</div>
+
+<section class="options">
+  <div class="container">
+    <div class="row">
+      <% if @links %>
+        <% @links.each do |link| %>
+          <div class="link-ind">
+            <div class="link-ind-wrapper">
+              <h3 class="grey-text"><b><%= link['url'] %></b></h3>
+              <h4 class="green-text"><b><%= link['genre'] %></b></h4>
+              <p><%= link['details'] %></p>
+              <a href="/links/<%= link['id']%>" class="btn-prim-small text-center">
+                View Bookmark
+              </a>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+
+      <% if @search %>
+        <% @search.each do |search| %>
+          <div class="link-ind">
+            <div class="link-ind-wrapper">
+              <h3 class="grey-text"><b><%= search['url'] %></b></h3>
+              <h4 class="green-text"><b><%= search['genre'] %></b></h4>
+              <p><%= search['details'] %></p>
+              <a href="/links/<%= search['id']%>" class="btn-prim-small text-center">
+                View Bookmark
+              </a>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>
+

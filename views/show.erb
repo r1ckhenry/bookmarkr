@@ -1,0 +1,23 @@
+<div class="content">
+  <div class="container">
+
+    <div class="page-content">
+      <h3><%= @link['genre'] %></h3>  
+      <h1><%= @link['url'] %></h1>
+      <p><%= @link['details'] %></p>
+      <a target="blank" href="<%= @link['url'] %>" class="btn-prim-small display-block">
+        <i class="fa fa-external-link"></i>
+        Go to site
+      </a><br>
+      <a href="/links/<%= @link['id'] %>/edit" class="btn-prim-small display-block">
+        <i class="fa fa-pencil-square-o"></i>
+        Edit
+      </a>
+      <form method="POST" action="/links/<%= @link['id'] %>/delete">
+        <button value="delete">Delete</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
